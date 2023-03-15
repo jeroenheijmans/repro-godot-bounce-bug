@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://csfgg83p1tg0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lqu2d"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_owjq3"]
+
+[node name="Main" type="Node"]
+
+[node name="Game" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Game"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Game/HBoxContainer"]
+custom_minimum_size = Vector2(200, 600)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Game/HBoxContainer"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Game/HBoxContainer/PanelContainer"]
+position = Vector2(200, 200)
+physics_material_override = SubResource("PhysicsMaterial_lqu2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/HBoxContainer/PanelContainer/RigidBody2D"]
+shape = SubResource("CircleShape2D_owjq3")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Game/HBoxContainer/PanelContainer"]
+position = Vector2(200, 400)
+scale = Vector2(-1, 1)
+motion_mode = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Game/HBoxContainer/PanelContainer/CharacterBody2D"]
+polygon = PackedVector2Array(-56, -48, -56, 40, 136, 40, 136, 40, 136, -8)
