@@ -8,6 +8,10 @@ It was deemed "_user error_" and "_wrong expectations [from the developer]_", no
 Because I feel others might run into these same gotchas as I did, I will leave up this repository.
 **Before the info on how to _reproduce_ the situation, let me _start_ with what I found out and how I worked around it.**
 
+## ⚠️ Notice about updates
+
+Note that this repository is provided "as-is" and will most likely not receive any (security) updates.
+
 ## Root cause and solution/workaround
 
 The root cause of the bug summarized from [the more extensive reply](https://github.com/godotengine/godot/issues/74940#issuecomment-1470369683) is (paraphrased):
